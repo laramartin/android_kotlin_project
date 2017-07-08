@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         val auth = FirebaseAuth.getInstance()
         if (auth.currentUser != null) {
             // already signed in
+            startActivity(Intent(this, DatabaseActivity::class.java))
         } else {
             // not signed in
             startActivityForResult(
