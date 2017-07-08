@@ -27,7 +27,6 @@ dependencies {
     })
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
-    // Firebase login
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.firebase:firebase-database:11.0.1'
@@ -35,6 +34,9 @@ dependencies {
     compile 'com.firebaseui:firebase-ui-auth:2.0.1'
     compile 'com.firebaseui:firebase-ui:2.0.1'
     testCompile 'junit:junit:4.12'
+
+    compile "io.reactivex.rxjava2:rxjava:2.1.1"
+
 }
 repositories {
     mavenCentral()

@@ -8,25 +8,18 @@ import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.ErrorCodes
 import com.firebase.ui.auth.IdpResponse
 import com.firebase.ui.auth.ResultCodes
-import com.google.firebase.auth.FirebaseAuth
-
-
-
+import eu.laramartin.medsreminder.firebase.UserModelImpl
 
 class MainActivity : AppCompatActivity() {
 
     private val RC_SIGN_IN = 123
 
+    val userViewModel: UserViewModel = UserViewModel(UserModelImpl())
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val auth = FirebaseAuth.getInstance()
-        if (auth.currentUser != null) {
-            // already signed in
-            startActivity(Intent(this, DatabaseActivity::class.java))
-        } else {
-            // not signed in
+        if (!userViewModel.isLoggedIn()) {
             startActivityForResult(
                     AuthUI.getInstance()
                             .createSignInIntentBuilder()
