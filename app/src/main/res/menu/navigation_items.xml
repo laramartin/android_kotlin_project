@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_meds"
+        android:title="@string/menu_meds"
+        android:icon="@drawable/ic_adb_black_24dp" />
+    <item android:id="@+id/action_friends"
+        android:title="@string/menu_friends"
+        android:icon="@drawable/ic_people_black_24dp" />
+    <item android:id="@+id/action_settings"
+        android:title="@string/menu_settings"
+        android:icon="@drawable/ic_settings_black_24dp" />
+</menu>

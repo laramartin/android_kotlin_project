@@ -2,4 +2,7 @@
     <string name="app_name">Meds reminder</string>
     <string name="dialog_login_error">Error login</string>
     <string name="ok">Ok</string>
+    <string name="menu_meds">Meds</string>
+    <string name="menu_friends">Friends</string>
+    <string name="menu_settings">Settings</string>
 </resources>
