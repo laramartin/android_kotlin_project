@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import eu.laramartin.medsreminder.firebase.UserModelImpl
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +19,29 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         if (!userViewModel.isLoggedIn()) {
             startActivityForResult(userViewModel.getLoginIntent(), RC_SIGN_IN)
+        }
+        navigation.setOnNavigationItemSelectedListener {
+            when(it.itemId) {
+                R.id.action_meds -> {
+                    view_meds.visible(true)
+                    view_friends.visible(false)
+                    view_settings.visible(false)
+                    true
+                }
+                R.id.action_friends ->  {
+                    view_meds.visible(false)
+                    view_friends.visible(true)
+                    view_settings.visible(false)
+                    true
+                }
+                R.id.action_settings ->  {
+                    view_meds.visible(false)
+                    view_friends.visible(false)
+                    view_settings.visible(true)
+                    true
+                }
+                else -> false
+            }
         }
     }
 
