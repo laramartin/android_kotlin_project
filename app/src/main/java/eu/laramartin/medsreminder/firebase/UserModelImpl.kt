@@ -29,6 +29,7 @@ class UserModelImpl : UserModel {
 
     override fun getLoginIntent(): Intent = AuthUI.getInstance()
                 .createSignInIntentBuilder()
+                .setIsSmartLockEnabled(false)
                 .setAvailableProviders(
                         arrayListOf(AuthUI.IdpConfig.Builder(AuthUI.EMAIL_PROVIDER).build(),
                                 AuthUI.IdpConfig.Builder(AuthUI.GOOGLE_PROVIDER).build()))
